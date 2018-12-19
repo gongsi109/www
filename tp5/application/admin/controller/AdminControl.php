@@ -30,6 +30,32 @@ class AdminControl extends Controller{
     protected final function getAdminInfo(){
         return $this->admin_info;
     }
+//    记录系统日志
+//    $lang 日志语言包
+//    $state 1成功0失败 null 不出现成功失败提示
+//    $admin_name
+//    $admin_id
+    protected final function log($lang = '',$state = 1){
+
+        $admin_name = session('admin_name');
+        $admin_id = session('admin_id');
+        $data = array();
+        if(is_null($state)){
+            $state = null;
+        } else {
+            $state = $state ? '': '失败';
+        }
+        $data['adminlog_content'] = $lang.$state;
+        $data['adminlog_time'] = TIMESTAMP;
+        $data['admin_name'] = $admin_name;
+        $data['admin_id'] = $admin_id;
+        $data['adminlog_ip'] = request()->ip();
+        $data['adminlog_url'] = request()->controller().'&'.request()->action();
+
+        $adminlog_model = model('adminlog');
+        return $adminlog_model->addAdminlog($data);
+    }
+
 
 
 }
