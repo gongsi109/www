@@ -12,7 +12,7 @@ class Articleclass extends Validate
     ];
 
     protected $scene = [
-      'add'=>['ac_name','ac_sort'],
-      'edit'=>['ac_name','ac_sort'],
+        'add'=>['ac_name','ac_sort'],
+        'edit'=>['ac_name','ac_sort'],
     ];
 }
