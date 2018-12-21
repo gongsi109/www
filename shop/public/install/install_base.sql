@@ -83,6 +83,10 @@ CREATE TABLE `#__adv` (
   PRIMARY KEY (`adv_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='广告表';
 
+
+
+
+
 DROP TABLE IF EXISTS `#__advposition`;
 CREATE TABLE `#__advposition` (
   `ap_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '广告位置自增ID',
@@ -2181,7 +2185,7 @@ INSERT INTO `#__advposition` (`ap_id`, `ap_name`, `ap_intro`, `ap_isuse`, `ap_wi
 (19, '闲置首页中部短栏广告3', '', 1, 290, 100),
 (20, '闲置首页中部短栏广告4', '', 1, 290, 100);
 
-INSERT INTO `#__adv` (`adv_id`, `ap_id`, `adv_title`, `adv_link`, `adv_code`, `adv_startdate`, `adv_enddate`, `adv_sort`, `adv_enabled`, `adv_clicknum`, `adv_bgcolor`) VALUES
+INSERT INTO `adv` (`adv_id`, `ap_id`, `adv_title`, `adv_link`, `adv_code`, `adv_startdate`, `adv_enddate`, `adv_sort`, `adv_enabled`, `adv_clicknum`, `adv_bgcolor`) VALUES
 (1, 1, '首页轮播图1', '', '5a4341aeb0372.jpg', 1199116800, 1830268800, 0, 1, 0, NULL),
 (2, 1, '首页轮播图2', '', '5a4341c011073.jpg', 1199116800, 1830268800, 0, 1, 0, NULL),
 (3, 2, '首页促销图-1', '', '5a4355443eaad.jpg', 1199116800, 1830268800, 0, 1, 0, NULL),
